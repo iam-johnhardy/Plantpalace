@@ -1,0 +1,152 @@
+/* ----======General style=======---- */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Dancing Script", system-ui;
+  src: url(./font/static/static/DancingScript-Regular.ttf);
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+:root {
+  ---font-weight: lighter;
+  ---font-h2-size: 70px;
+  ---button-background-color: rgb(68, 146, 68);
+  ---transition-duration: 0.5s;
+  ---border-radius-btn: 20px;
+  ---btn-padding: 20px 40px;
+  ---border-res-radious-btn: 10px;
+
+}
+
+/* ---=====Footer css=====---  */
+.footer {
+  margin-top: 100px;
+  outline: 2px solid red;
+  position: relative;
+  background-color: rgba(10, 14, 10, 0.339);
+
+
+}
+
+.footer::before {
+  content: '';
+  background-image: url(./Asset/istockphoto-1405609379-2048x2048.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-size: fill;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  opacity: 0.1;
+}
+
+
+.enter-email {
+  text-align: center;
+}
+
+.enter-email input {
+  padding: 20px;
+  width: 30%;
+  border-radius: var(---border-radius-btn);
+  background-color: var(---search-bar-bg);
+  border: none;
+  position: relative;
+
+}
+
+
+.enter-email h2 {
+  font-size: 70px;
+  margin: auto 300px;
+  margin-bottom: 25px;
+}
+
+.enter-email h6 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  font-weight: lighter;
+  font-family: "Dancing Script", system-ui;
+}
+
+.enter-email a {
+  background-color: #fff;
+  padding: var(---btn-padding);
+  border-radius: var(---border-radius-btn);
+  transition-timing-function: ease-in;
+  transition-duration: var(---transition-duration);
+  font-family: "Dancing Script", system-ui;
+  position: relative;
+}
+
+.enter-email a:hover {
+  background-color: var(---button-background-color);
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.footer_map {
+  color: #000;
+  padding: 10px 0 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-bottom: 1px solid rgba(157, 151, 151, 1.9);
+  font-family: "Dancing Script", system-ui;
+  font-size: 20px;
+  font-weight: 300;
+  position: relative;
+  margin-top: 80px;
+}
+
+.footer_nav {
+  display: inline-block;
+  font-family: "Dancing Script", system-ui;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+
+.plantpalace-logo-2 {
+  width: 100px;
+  position: relative;
+}
+
+.Copyright {
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  margin: auto 10px;
+  font-size: 20px;
+  font-family: "Dancing Script", system-ui;
+  position: relative;
+}
+
+.Copyright svg {
+  width: 20px;
+  margin-left: 10px;
+}
+
+/* ------Responsiveness---- */
+@media screen and (max-width: 800px) {
+   .footer{
+    width: 100%;
+    
+   }
+  
+}

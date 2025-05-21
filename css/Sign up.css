@@ -1,0 +1,141 @@
+/* ----======General style=======---- */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Dancing Script", system-ui;
+  src: url(./font/static/static/DancingScript-Regular.ttf);
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+:root {
+  ---font-weight: lighter;
+  ---font-h2-size:70px;
+  ---button-background-color:rgb(68, 146, 68);
+  ---transition-duration:0.5s;
+  ---border-radius-btn:20px;
+  ---btn-padding: 20px 40px;
+  ---border-res-radious-btn:10px;
+
+}
+
+/* ----=====Background style====---- */
+.container {
+  width: 100%;
+  position: relative;
+  height: 100vh;
+  background-color:rgba(73, 117, 73,0.9);
+  padding: 35px; 
+}
+
+.container::before {
+  background-image: url(./Asset/background1.jpg);
+  background-repeat:no-repeat;
+  height: 100vh;
+  content: '';
+  background-size: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+  opacity: 0.5;
+}
+
+/* ----======Sign up page style=====---- */
+label{
+  margin-left: 25px;
+  font-size: 20px;
+}
+.login-page {
+  width: 500px;
+  height: 700px;
+  background-color:rgba(245, 245, 245, 0.4);
+  box-shadow:4px 5px 8px #000;
+  border-radius: 20px;
+  position: relative;
+  padding: 10px;
+  margin: auto;
+}
+
+.login-page h2{
+  font-size: 70px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+input {
+  padding: 18px ;
+  width: 450px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  color: rgba(128, 128, 128, 0.963);
+  border: none;
+  margin-left: 15px;
+}
+
+.login {
+  font-family: "Dancing Script", system-ui;
+  color: #fff;
+  font-size: 30px;
+  background-color: black;
+  padding: 8px 20px;
+  border-radius: 20px;
+  transition-duration: 3s;
+}
+
+.sign-up {
+  text-align: center;
+  font-family: "Dancing Script", system-ui
+}
+
+.google-sign-btn{
+  text-align: center;
+  margin-top: 30px;
+}
+.google-sign-btn a{
+  color: #000;
+  transition: ease-in-out;
+  transition-duration: 0.5s;
+}
+.google-sign-btn a:hover{
+  background-color:rgb(68, 146, 68);
+  color: #fff;
+  border: 2xp solid #fff;
+}
+.sign-btn{
+  border:1px solid #fff;
+  border-radius: var(---border-radius-btn);
+  font-size: 30px;
+  background-color: #fff;
+  padding: 15px 30px;
+
+}
+.google-btn {
+  padding:20px 40px;
+  border:1px solid #fff;
+  border-radius: var(---border-radius-btn);
+  background-color: #fff;
+  font-size: 25px;
+
+}
+
+.login-btn{
+  padding-top: 30px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.login-btn a{
+  color: rgb(66, 0, 128);
+}

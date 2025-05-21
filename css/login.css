@@ -1,0 +1,123 @@
+/* ---=====General style=====--- */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Dancing Script", system-ui;
+  src: url(./font/static/static/DancingScript-Regular.ttf);
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+:root {
+  ---font-weight: lighter;
+  ---font-h2-size:70px;
+  ---button-background-color:rgb(68, 146, 68);
+  ---transition-duration:0.5s;
+  ---border-radius-btn:20px;
+  ---btn-padding: 20px 40px;
+  ---border-res-radious-btn:10px;
+}
+
+/* ----=======Background style======---- */
+.container::before {
+  background-image: url(../Asset/main-background\ 2.webp);
+  background-repeat:no-repeat;
+  content: '';
+  background-position: center;
+  background-size: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+  opacity: 0.4;
+}
+
+.container {
+  position: relative;
+  height: 100vh;
+  background-color:rgba(73, 117, 73,0.9);
+  padding: 140px;
+}
+
+.login-page {
+  width: 450px;
+  height: 450px;
+  background-color:rgba(245, 245, 245, 0.4);
+  box-shadow:4px 5px 8px #000;
+  border-radius: 20px;
+  position: relative;
+  padding: 20px;
+}
+
+.login-page h2{
+  font-size: 50px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+label {
+  margin-left: 10px;
+}
+
+form {
+  width: 100px;
+  font-size: 20px;
+
+}
+
+input {
+  padding: 15px ;
+  width: 400px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  color: rgba(128, 128, 128, 0.963);
+  border: none;
+}
+
+.forget-password-btn{
+  margin-left: 10px;
+  color: rgb(66, 0, 128);
+
+}
+
+.login {
+  font-family: "Dancing Script", system-ui;
+  text-align: center;
+  color: #fff;
+  font-size: 30px;
+  margin: auto 100px;
+  background-color: black;
+  padding: 15px 30px;
+  border-radius: var(---border-radius-btn);
+  transition: ease-in-out;
+  transition-duration: 0.5s;
+  margin-top: 30px
+}
+
+.login:hover {
+  background-color:var(---button-background-color);
+  border: 1px solid #fff;
+
+}
+
+
+.login a {
+  color: #fff;
+}
+
+.sign-up {
+  margin-top: 10px;
+  text-align: center;
+  font-family: "Dancing Script", system-ui;
+}
