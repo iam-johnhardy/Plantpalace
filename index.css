@@ -401,6 +401,59 @@ h5 span {
   left: 20%;
 }
 
+/* ------Blog Page------ */
+
+.blog_page{
+  margin:  5%;
+  height: 70vh;
+}
+.blog_heading h2{
+  font-weight: 600;
+  font-size: 60px;
+  font-family: serif;
+}
+.blog_heading p{
+  margin:1% 30%;
+}
+
+
+.blog_heading{
+  text-align: center;
+}
+.blog_details{
+  display: flex;
+}
+.blog_details img{
+  width: 70px;
+  border-radius: 50%;
+}
+.blog_post_container{
+  display: flex;
+  justify-content: space-between;
+  gap: 2em;
+ 
+}
+
+.blog_post{
+   border: 2px solid rgb(130, 121, 121);
+  /* margin-top: 1rem; */
+  padding: 20px;
+  height: 40vh;
+  width: 20%;
+  border-radius: 20px;
+
+}
+.blog_post_up{
+   border: 2px solid rgb(130, 121, 121);
+  margin-top: -3rem;
+  padding: 20px;
+  height: 40vh;
+  width: 20%;
+  border-radius: 20px;
+
+}
+
+
 
 
 
