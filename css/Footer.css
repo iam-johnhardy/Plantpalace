@@ -148,5 +148,11 @@ a {
     width: 100%;
     
    }
+   .enter-email h2 {
+  font-size: 50px;
+  margin: auto 50px;
+  margin-bottom: 25px;
+}
+
   
 }
