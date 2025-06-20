@@ -27,7 +27,7 @@ function search() {
 
       // Change Picture Hero Section(indoor)
 
-      const imageSources = ['indoor plants.webp','img 5.jpg','img 6.jpg'];
+      const imageSources = ['indoor-plants.webp','img-5.jpg','img-6.jpg'];
 
       let currentIndex = 0;
       const imageElement = document.getElementById('rotating-image');
