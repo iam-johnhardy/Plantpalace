@@ -1,12 +1,14 @@
+
+
 // Tollbar functionality
 function showSidebar() {
-        const sidebar = document.querySelector('.sidebar')
-        sidebar.style.display = 'flex'
+        const sidebar = document.querySelector('.sideBar')
+        sidebar.style.display = 'block'
       };
 // hide the sidebar
-function hideSidebar() {
-        const sidebar = document.querySelector('.sidebar')
-        sidebar.style.display = 'none'
+function disableSidebar() {
+        const disableSidebar = document.querySelector('.sideBar')
+        disableSidebar.style.display = 'none'
       };
 
     //  search functionality
@@ -27,19 +29,23 @@ function search() {
 
       // Change Picture Hero Section(indoor)
 
-      const imageSources = ['indoor-plants.webp','img-5.jpg','img-6.jpg'];
+      const tableSources = ['table-plants.webp','outdoor1.jpg', 'outdoor2.jpg'];
+      const houseSources = ['bamboo-tree.jpg','outdoor1.jpg', 'outdoor2.jpg'];
+      const outdoorSources = ['indoor-plants.webp','img-5.jpg','img-6.jpg'];
 
       let currentIndex = 0;
       const imageElement = document.getElementById('rotating-image');
+            const outImageElement = document.getElementById('outImageElement');
+                        const tableImageElement = document.getElementById('tableImageElement');
 
       function changeImage() {
-        currentIndex = (++currentIndex) % imageSources.length
-
-
-        imageElement.style.opacity = 0;
+        currentIndex = (++currentIndex) % ['outdoorSources','houseSources', 'tableSources' ].length
         
         setTimeout(() => {
-        imageElement.src = imageSources[currentIndex];
+        imageElement.src = outdoorSources[currentIndex];
+                outImageElement.src = houseSources[currentIndex];
+                                tableImageElement.src = tableSources[currentIndex];
+
           imageElement.style.opacity = 1;
         }, 300);
       }
@@ -47,6 +53,7 @@ function search() {
       changeImage();
 
       const intervalid = setInterval(changeImage, 5000);
+
 
 
 

@@ -36,7 +36,7 @@ svg {
   ---button-background-color: rgb(68, 146, 68);
   ---transition-duration: 0.5s;
   ---border-radius-btn: 20px;
-  ---btn-padding: 10px 40px;
+  ---btn-padding: 25px 40px;
   ---border-res-radious-btn: 10px;
   ---main-font-color: #757575;
   ---search-bar-bg: rgba(211, 222, 211, 0.7);
@@ -51,7 +51,7 @@ svg {
   background-color: var(---search-bar-bg);
   align-items: center;
   font-size: 20px;
-  padding: 0.2em 2.4em ;
+  padding: 0.2em 2.4em;
   display: flex;
   justify-content: end;
   gap: 35rem;
@@ -69,17 +69,17 @@ svg {
   transform: translate(-50%, -50%);
   font-size: 20px;
   font-weight: lighter;
-  font-family:  serif;
+  font-family: serif;
   color: var(---main-font-color);
   z-index: 1;
   width: 90%;
 }
 
-nav > ul{
+nav>ul {
   display: inline-block;
 }
 
-nav > ul > li {
+nav>ul>li {
   position: relative;
   float: left;
   width: 25rem;
@@ -91,6 +91,7 @@ nav > ul > li {
 .plantpalace-logo {
   margin-right: 30em;
   width: 15%;
+  cursor: pointer;
 }
 
 .dropdown li {
@@ -171,11 +172,76 @@ nav > ul > li {
   font-style: italic;
 }
 
-.cart{
+.cart {
   padding: 10px 0 0px 30px;
 }
-.hideOnLaptop{
+
+.hideOnLaptop {
   display: none;
+
+}
+
+.sideBar {
+  display: none;
+  position: fixed;
+  right: 0;
+  top: 2;
+  backdrop-filter: blur(20px);
+  width: 250px;
+  height: 100vh;
+  line-height: 8.5em;
+  padding: 10px;
+  z-index: 999;
+  box-shadow: -10px 10px 10px #00000090;
+
+}
+.sideBar .hideOnLaptop img{
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: -20% ;
+  top: 0;
+  cursor: pointer;
+  animation: autoRotate;
+  animation-timeline:view(20px);
+
+}
+
+@keyframes autoRotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+  
+}
+
+.sideBar li a {
+  color: #ffffff;
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+.sideBar input {
+  padding: 12px;
+  border-radius: 20px;
+}
+
+.sideBar div svg:hover {
+  animation: bounce 800ms alternate ease-in-out;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(10px);
+
+  }
+
+  to {
+    transform: translateY(40px);
+  }
 }
 
 
@@ -184,7 +250,7 @@ nav > ul > li {
   position: relative;
   height: 70vh;
   display: flex;
-  margin-top: 3.5em;
+  margin-top: 3.9em;
   justify-content: center;
   align-items: center;
   background-color: #000;
@@ -229,7 +295,7 @@ nav > ul > li {
   text-shadow: 14px 13px 15px #000;
 }
 
-.shop-now-btn{
+.shop-now-btn {
   background-color: #fff;
   padding: 15px 40px;
   border-radius: var(---border-radius-btn);
@@ -309,15 +375,40 @@ nav > ul > li {
   color: #757575;
 }
 
+/* <!-- ----Table, Indoor, and House plant---- --> */
+
+.plant-container {
+  display: none;
+}
+
+
+
 
 /* ---=====about us====--- */
+@keyframes text-appear {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  
+}
+.autoShow{
+  animation: text-appear both;
+  animation-timeline: view();
+  animation-range: entry 20% cover 100vh;
+}
 
 .about-us {
   text-align: center;
   padding: 40px;
   margin: 100px 0px;
-  height: 480px;
-  background:linear-gradient(#fff,rgba(211, 222, 211, 0.2));
+  height: 65vh;
+  background: linear-gradient(#fff, rgba(211, 222, 211, 0.2));
 
 }
 
@@ -353,10 +444,12 @@ nav > ul > li {
   color: var(---button-background-color);
 }
 
-.about-us h5:last-child{
+.about-us h5:last-child {
   font-size: 1.5rem;
   font-weight: 500;
 }
+
+
 
 
 /* ----======main section======---- */
@@ -386,6 +479,7 @@ main {
   font-size: 25px;
   font-weight: lighter;
   margin-bottom: 15px;
+
 }
 
 .healthy-planet button {
@@ -396,7 +490,7 @@ main {
   border-radius: var(---border-radius-btn);
   font-size: var(---btn-size);
   margin: auto;
-  display: flex; 
+  display: flex;
   gap: var(---btn-gap);
 }
 
@@ -414,10 +508,29 @@ main {
 }
 
 /* ----=====Popular production=====---- */
+@keyframes imageReveal {
+  from{
+    filter: saturate(0) contrast(4) brightness(.1) blur(5px);
+    opacity: 0;
+    scale: .65;
+  translate: 0 4rem;
+  }
+  to{
+    filter: none;
+    opacity: 1;
+    scale: 1;
+    translate: 0, 0;
+  }
+}
+
+.imageReveal{
+  animation: imageReveal both;
+  animation-timeline: view(50% 20%) ;
+}
 .popular-product {
   padding: 30px;
   margin-top: 100px;
-  background:linear-gradient(#fff,rgba(211, 222, 211, 0.2));
+  background: linear-gradient(#fff, rgba(211, 222, 211, 0.2));
 }
 
 .popular-product h5 {
@@ -432,13 +545,13 @@ h5 span {
 
 .popular-product h2 {
   text-align: center;
-  font-size: 3.5em;
+  font-size: 4em;
 }
 
 .product-list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  margin-top: 100px;
+  margin-top: 5em;
 }
 
 .product-detail {
@@ -522,7 +635,6 @@ h5 span {
 
 .blog_post_container {
   display: flex;
-  justify-content: space-between;
   gap: 2em;
 
 }
@@ -557,7 +669,7 @@ h5 span {
 }
 
 .discount {
-  background-color: #F6F8F6;
+  background-color:rgba(211, 222, 211, 0.2);
   text-align: center;
   padding: 10px;
   margin-top: 4em;
@@ -632,251 +744,408 @@ h5 span {
   cursor: pointer;
   z-index: 999;
 }
+
 .scroll-up:hover {
   background-color: #fff;
   color: #5A9244;
   transition: var(---transition-duration);
 }
 
-.scroll-up{
-    animation:autoRotate ;
-    animation-timeline: view();
-        outline: 10px solid rgb(30, 0, 255);
-
-}
-.scroll-up{
-    animation:autoRotate ;
-    animation-timeline: view();
-        outline: 10px solid rgb(242, 255, 0);
-
-}
-.scroll-up{
-    animation:autoRotate ;
-    animation-timeline: view();
-        outline: 10px solid rgb(255, 0, 81);
+.scroll-up {
+  animation: autoRotate;
+  animation-timeline: view();
+  outline: 10px solid rgb(255, 0, 81);
 
 }
 
 @keyframes autoRotate {
-    from{
-        transform: rotate(175deg);
+  from {
+    transform: rotate(175deg);
 
-    }
-    to {
-        transform: rotate(320deg);
-    }
-    
+  }
+
+  to {
+    transform: rotate(320deg);
+  }
+
 }
 
 
-/* ---===== Media Queries for Responsiveness =====--- */
 
-/* Small devices (e.g., phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+  /* Medium devices ( Phones, 400px) */
+@media (max-width: 400px) {
+  
+  .hideOnLaptop {
+  display: block;
+  outline:1px solid red;
+  z-index: 999;
+
+}
+
   .display-header {
-    padding: 5px 20px; 
-    justify-content: center; 
-    font-size: 16px;
+    padding: 5px 20px;
+    font-size: 12px;
+    gap: 5rem;
   }
+
   .hideOnMobile {
-    display: block;
+    display: none;
   }
-  .display-header a {
-    margin-left: 0; 
-    text-align: center;
-  }
-
-  .nav {
-    flex-direction: column; 
-    top: 5%; 
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 16px;
-    width: 95%; 
-  }
-
-  nav > ul {
-    width: 100%; /* Make ul take full width */
-    text-align: center;
-  }
-
-  nav > ul > li {
-    width: 100%; /* Make list items take full width */
-    float: none; /* Remove float */
-  }
-
-  .plantpalace-logo {
-    margin-right: 0; /* Remove large margin */
-    width: 30%; /* Adjust logo size */
-  }
-
-  .nav input {
-    width: 80%; /* Adjust search input width */
-    margin: 10px auto; /* Center the input */
-  }
-
-  .search {
-    position: static; /* Remove absolute positioning */
-    text-align: center;
-    margin-top: 10px;
-  }
-
   .hero-section {
-    height: auto; /* Allow height to adjust */
-    padding: 50px 20px; /* Add padding */
-  }
-
+  margin-top: 1em;
+}
   .hero-section h1 {
-    font-size: 40px; /* Smaller font size for heading */
-    margin: 0 20px 20px; /* Adjust margins */
-  }
+  font-size: 2.1em;
+  margin: auto 10px;
 
-  .hero-section h3 {
-    font-size: 20px; /* Smaller font size for sub-heading */
-    margin-bottom: 20px;
-  }
+}
+.hero-section h3 {
+  font-size: 20px;
+  font-weight: lighter;
+  margin-bottom: 8em;
+  position: relative;
+  text-shadow: 14px 13px 15px #000;
+}
 
   .shop-now-btn {
-    position: static; /* Remove absolute positioning */
-    display: block; /* Make it a block element to center */
-    margin: 20px auto; /* Center the button */
-    left: auto;
+    left: 23%;
+    top: 55%;
   }
 
   .plant-items {
-    flex-direction: column; /* Stack plant items vertically */
-    margin-top: 20px;
+    margin-top: -10rem;
+    display: block;
+    text-align: center;
+
   }
 
   .indoor-plant img,
   .table-tree-plant img,
   .house-plant img {
-    width: 90%; /* Make images responsive */
-    height: auto; /* Maintain aspect ratio */
-    margin-bottom: 20px;
-    border: 10px solid #fff; /* Adjust border */
+    width: 270px;
+    height: 270px;
+    border: 15px solid #fff;
   }
 
   .table-tree-plant img:hover,
   .house-plant img:hover {
-    width: 95%; /* Adjust hover size */
-    height: auto;
+    width: 320px;
+    height: 320px;
   }
 
-  .about-us {
-    margin: 50px 0; /* Adjust margin */
-    padding: 20px;
-    height: auto; /* Allow height to adjust */
-  }
+  .about-us h2 {
+  font-size: 3em;
+  font-weight: bold;
+  margin-top: 10px;
+}
+.autoShow{
+   font-size: 0.5em;
+}
+
 
   .about-us p {
-    margin: auto 20px; /* Adjust paragraph margins */
+    margin: auto 0.4em;
+    font-size: 1em;
   }
+  .about-us img {
+  width: 50px;
+  margin: 10px 0;
+}
+   .about-us h5:last-child {
+  font-size: 1rem;
+}
 
   .healthy-planet {
-    top: 2%; /* Adjust position */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-  }
+  top: 2%;
+  left: 8%;
+}
+.healthy-planet h2 {
+  font-size: 60px;
+  margin-bottom: 0.8em;
+}
+.healthy-planet h6 {
+  font-size: 20px;
 
-  .healthy-planet h2 {
-    font-size: 40px; /* Smaller font size */
-  }
+}
+.healthy-planet .Discover_Now {
+  padding: var(---btn-padding);
+  border: none;
+  color: #000;
+  background-color: #fff;
+  border-radius: var(---border-radius-btn);
+  font-size: var(---btn-size);
+  margin: auto;
+  display: flex;
+  gap: var(---btn-gap);
+}
 
-  .healthy-planet h6 {
-    font-size: 18px; /* Smaller font size */
-  }
 
-  .healthy-image {
-    height: 40vh; /* Adjust height */
-  }
-
-  .popular-product {
-    margin-top: 50px;
-    padding: 15px;
+  .product-list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    margin-top: 5em;
+    height: 100%;
+    width: 100%;
   }
 
   .popular-product h2 {
-    font-size: 35px; /* Smaller font size */
+    text-align: center;
+    font-size: 2.5em;
   }
 
-  .product-list {
-    grid-template-columns: 1fr; /* Single column layout for products */
-    margin-top: 50px;
+  .product-icon h4 {
+    padding: 2px;
+    border-radius: 2px;
+    font-size: 15px;
+
   }
 
+  .product-icon svg {
+    width: 20px;
+  }
+
+  .product-detail h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    font-family: "Dancing Script", system-ui;
+    font-weight: lighter;
+
+
+  }
+
+
+  .plant-1,
+  .plant-2,
+  .plant-3,
+  .plant-4,
+  .plant-5,
+  .plant-6,
+  .plant-7,
+  .plant-8 {
+    position: absolute;
+    top: 65%;
+    bottom: 0;
+    left: 25%;
+    outline: 3px solid red;
+
+  }
+
+  /* ---------Blog page------- */
   .blog_page {
-    margin: 20px;
-    height: auto;
-  }
-
-  .blog_heading h2 {
-    font-size: 35px; /* Smaller font size */
-  }
-
-  .blog_heading p {
-    margin: 1% 10%; /* Adjust paragraph margin */
+    margin: 5%;
+    height: 100%;
   }
 
   .blog_post_container {
-    flex-direction: column; /* Stack blog posts vertically */
-    gap: 1em;
+    display: block;
+    margin-bottom: 2rem;
   }
 
-  .blog_post,
+  .blog_post {
+    border: 2px solid rgb(130, 121, 121);
+    height: 20vh;
+    width: 50%;
+    padding: 10px;
+    border-radius: 20px;
+
+  }
+
   .blog_post_up {
-    width: 90%; /* Adjust width */
-    height: auto; /* Allow height to adjust */
-    margin: 0 auto 20px; /* Center and add bottom margin */
-  }
+    animation: none;
+    margin-top: 0;
+    height: 20vh;
+    width: 50%;
+    padding: 10px;
 
-  .blog_post_up {
-    margin-top: 0; /* Remove negative margin */
-  }
 
-  .discount {
-    height: auto;
-    padding: 20px;
-    margin-top: 2em;
-  }
-
-  .discount h3 {
-    font-size: 24px;
-  }
-
-  .scroll-up {
-    width: 40px;
-    height: 40px;
-    bottom: 10px;
-    right: 10px;
   }
 }
 
-/* Medium devices (e.g., tablets, 601px to 1024px) */
-@media only screen and (min-width: 601px) and (max-width: 1160px) {
+
+/* Medium devices ( tablets, 400px to 800px) */
+@media (min-width: 400px) and (max-width: 800px) {
+  hideOnLaptop {
+  display: block;
+
+}
   .display-header {
-    padding: 5px 30px;
-    font-size: 18px;
-  }
-
-  .hideOnLaptop {
-    display: none;
-  }
-
-  .display-header a {
-    margin-left: 15rem; /* Adjust margin for medium screens */
+    padding: 5px 20px;
+    font-size: 12px;
+    gap: 5rem;
   }
 
   .nav {
-    top: 7%;
+    display: none;
+  }
+
+  .hero-section {
+  position: relative;
+  height: 70vh;
+  display: flex;
+  margin-top: 3em;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+}
+
+  
+  .hero-section h1 {
+  font-size: 40px;
+  margin: auto 10px;
+
+}
+
+  .shop-now-btn {
+    left: 25%;
+    top: 52%;
+  }
+
+  .plant-items {
+    margin-top: -10rem;
+    display: block;
+    text-align: center;
+
+  }
+
+  .indoor-plant img,
+  .table-tree-plant img,
+  .house-plant img {
+    width: 300px;
+    height: 300px;
+    border: 15px solid #fff;
+  }
+
+  .table-tree-plant img:hover,
+  .house-plant img:hover {
+    width: 400px;
+    height: 400px;
+  }
+  .about-us h2 {
+  font-size: 3em;
+  margin-top: 10px;
+}
+
+  .about-us p {
+    margin: auto 10px;
+    font-size: 1em;
+  }
+ 
+  .healthy-planet {
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  z-index: 1;
+  top: 2%;
+  left: 12%;
+}
+
+  .product-list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    margin-top: 5em;
+    height: 100%;
+    width: 100%;
+  }
+
+  .popular-product h2 {
+    text-align: center;
+    font-size: 2.5em;
+  }
+
+  .product-icon h4 {
+    padding: 2px;
+    border-radius: 2px;
+    font-size: 15px;
+
+  }
+
+  .product-icon svg {
+    width: 20px;
+  }
+
+  .product-detail h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    font-family: "Dancing Script", system-ui;
+    font-weight: lighter;
+
+
+  }
+
+
+  .plant-1,
+  .plant-2,
+  .plant-3,
+  .plant-4,
+  .plant-5,
+  .plant-6,
+  .plant-7,
+  .plant-8 {
+    position: absolute;
+    top: 65%;
+    bottom: 0;
+    left: 25%;
+    outline: 3px solid red;
+
+  }
+
+  /* ---------Blog page------- */
+  .blog_page {
+    margin: 5%;
+    height: 100%;
+  }
+
+  .blog_post_container {
+    display: block;
+    margin-bottom: 2rem;
+  }
+
+  .blog_post {
+    border: 2px solid rgb(130, 121, 121);
+    height: 20vh;
+    width: 50%;
+    padding: 10px;
+    border-radius: 20px;
+
+  }
+
+  .blog_post_up {
+    animation: none;
+    margin-top: 0;
+    height: 20vh;
+    width: 50%;
+    padding: 10px;
+
+
+  }
+}
+
+/* Medium devices ( tablets, 800px to 1159px) */
+@media (min-width: 800px) and (max-width: 1159px) {
+  hideOnLaptop {
+  display: none;
+
+}
+  .display-header {
+    padding: 5px 30px;
+    font-size: 16px;
+    gap: 5rem;
+  }
+
+
+  .display-header a {
+    margin-left: 15rem;
+  }
+
+  .nav {
+    top: 10%;
     left: 50%;
     width: 90%;
     font-size: 18px;
   }
 
-  nav > ul > li {
-    width: 20rem; /* Adjust width of nav items */
+  nav>ul>li {
+    width: 20rem;
   }
 
   .plantpalace-logo {
@@ -903,31 +1172,32 @@ h5 span {
   }
 
   .shop-now-btn {
-    left: 40%; /* Adjust button position */
+    left: 37%;
+    top: 55%;
   }
 
   .plant-items {
-    margin-top: -5rem; 
-    display: block;
+    margin-top: -7rem;
+    display: flex;
 
   }
 
   .indoor-plant img,
   .table-tree-plant img,
   .house-plant img {
-    width: 270px; 
-    height: 270px;
+    width: 240px;
+    height: 240px;
     border: 15px solid #fff;
   }
 
   .table-tree-plant img:hover,
   .house-plant img:hover {
-    width: 350px;
-    height: 350px;
+    width: 280px;
+    height: 280px;
   }
 
   .about-us p {
-    margin: auto 100px; /* Adjust paragraph margins */
+    margin: auto 100px;
   }
 
   .healthy-planet {
@@ -949,7 +1219,7 @@ h5 span {
   }
 
   .product-list {
-    grid-template-columns: repeat(2, 1fr); 
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .blog_page {
@@ -966,94 +1236,122 @@ h5 span {
   }
 
   .blog_post_container {
-    flex-wrap: wrap; /* Allow items to wrap */
+    flex-wrap: wrap;
     justify-content: center;
   }
 
   .blog_post,
   .blog_post_up {
-    width: 45%; 
+    width: 45%;
     margin-bottom: 20px;
+    height: 25vh;
+
   }
 
   .blog_post_up {
     margin-top: 0;
+    animation: none;
+    height: 25vh;
   }
+
 }
 
-/* Large devices (e.g., desktops, 1024px and up) - These are mostly your original styles */
-@media (min-width: 1160px) and (max-width: 1500px) {
-  .display-header{
-      gap: 25rem;
+/* Large devices ( Desktop, 1160px to 1500px) */
+@media (min-width: 1159px) and (max-width: 1500px) {
+  .display-header {
+    gap: 20rem;
   }
 
   .nav {
-  top: 9%;
-  left: 52%;
-  width: 89%;
-}
-
-.hero-section h1{
-    margin: auto 150px;
-
-}
-.shop-now-btn{
-    top: 50%;
-      left: 42%;
-
-
-}
-
-   .plant-items {
-    margin-top: -10rem; 
+    top: -0%;
+    left: 2%;
+    width: 89%;
+    outline: 2px solid red;
   }
-.house-plant img,
-.indoor-plant img,
-.table-tree-plant img {
-  width: 350px;
-  height: 350px;
-}
-.table-tree-plant img:hover {
-  width: 400px;
-  height: 400px;
-} 
-.house-plant img:hover {
-  width: 400px;
-  height: 400px;
-} 
+
+  .plantpalace-logo {
+    margin-right: 15em;
+  }
+
+  .nav input {
+    width: 47%;
+    outline: 2px solid red;
+
+  }
+
+  .search {
+    right: 6%;
+  }
+
+  .nav input::placeholder {
+    font-size: 15px;
+  }
+
+  .hero-section {
+    margin-top: 4.9em;
+
+  }
+
+  .hero-section h1 {
+    margin: auto 50px;
+
+  }
+
+  .shop-now-btn {
+    top: 50%;
+    left: 42%;
+  }
+
+  .plant-items {
+    margin-top: -10rem;
+  }
+
+  .house-plant img,
+  .indoor-plant img,
+  .table-tree-plant img {
+    width: 350px;
+    height: 350px;
+  }
+
+  .table-tree-plant img:hover {
+    width: 400px;
+    height: 400px;
+  }
+
+  .house-plant img:hover {
+    width: 400px;
+    height: 400px;
+  }
+
   .hideOnLaptop {
     display: none;
   }
-  
-.popular-product h2 {
-  font-size: 1.8em;
-}
+
+  .popular-product h2 {
+    font-size: 1.8em;
+  }
+
   .blog_details {
-  flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  .about-us {
+    height: 60vh;
+
+  }
+
+  .healthy-planet {
+    text-align: center;
+    top: 5%;
+    left: 25%;
+  }
+
+  .blog_post_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2em;
+
+  }
+
 }
-  /* Your original styles usually serve as the base for large screens.
-     You can add specific adjustments here if needed, but often the default
-     styles are good for larger screens. */
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

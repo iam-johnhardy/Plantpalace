@@ -84,7 +84,7 @@ a {
 
 .enter-email a {
   background-color: #fff;
-  padding: var(---btn-padding);
+  padding: 17px 30px;
   border-radius: var(---border-radius-btn);
   transition-timing-function: ease-in;
   transition-duration: var(---transition-duration);
