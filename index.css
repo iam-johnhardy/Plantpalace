@@ -178,7 +178,6 @@ nav>ul>li {
 
 .hideOnLaptop {
   display: none;
-
 }
 
 .sideBar {
@@ -194,6 +193,10 @@ nav>ul>li {
   z-index: 999;
   box-shadow: -10px 10px 10px #00000090;
 
+}
+
+.sideBar li a{
+  clear: none;
 }
 .sideBar .hideOnLaptop img{
   width: 50px;
@@ -773,44 +776,51 @@ h5 span {
 
 
   /* Medium devices ( Phones, 400px) */
-@media (max-width: 400px) {
+@media (max-width: 399px) {
   
   .hideOnLaptop {
-  display: block;
-  outline:1px solid red;
-  z-index: 999;
+  /* display: flex; */
+  /* position: fixed; */
 
+  z-index: 999;
+  outline: 2px solid red ;
 }
 
   .display-header {
-    padding: 5px 20px;
+    padding: 5px 5px;
     font-size: 12px;
-    gap: 5rem;
+    gap: 0rem;
+    width: 100%;
   }
+  
 
   .hideOnMobile {
     display: none;
   }
   .hero-section {
   margin-top: 1em;
+  width: 100%;
 }
   .hero-section h1 {
-  font-size: 2.1em;
-  margin: auto 10px;
+  font-size: 2.5em;
+  margin: auto 7px;
 
 }
 .hero-section h3 {
   font-size: 20px;
   font-weight: lighter;
-  margin-bottom: 8em;
+  margin-bottom: 9.5em;
   position: relative;
   text-shadow: 14px 13px 15px #000;
 }
 
-  .shop-now-btn {
-    left: 23%;
-    top: 55%;
+ .shop-now-btn {
+      padding: 10px 25px;
+    top: 54%;
+       left: 30%;
+      font-size: 13px;
   }
+
 
   .plant-items {
     margin-top: -10rem;
@@ -832,6 +842,11 @@ h5 span {
     width: 320px;
     height: 320px;
   }
+  .about-us {
+  padding: 20px;
+  height: 60vh;
+
+}
 
   .about-us h2 {
   font-size: 3em;
@@ -844,8 +859,8 @@ h5 span {
 
 
   .about-us p {
-    margin: auto 0.4em;
-    font-size: 1em;
+    margin: auto 0.1em;
+    font-size: 0.9em;
   }
   .about-us img {
   width: 50px;
@@ -858,30 +873,25 @@ h5 span {
   .healthy-planet {
   top: 2%;
   left: 8%;
+  
 }
 .healthy-planet h2 {
-  font-size: 60px;
-  margin-bottom: 0.8em;
+  font-size: 50px;
+  margin-bottom: 0.1em;
 }
 .healthy-planet h6 {
   font-size: 20px;
+    margin-bottom: 5px;
+
 
 }
-.healthy-planet .Discover_Now {
-  padding: var(---btn-padding);
-  border: none;
-  color: #000;
-  background-color: #fff;
-  border-radius: var(---border-radius-btn);
-  font-size: var(---btn-size);
-  margin: auto;
-  display: flex;
-  gap: var(---btn-gap);
+.healthy-planet button{
+  padding: 10px 20px;
+  font-size: 17px;
+  gap: 0.3rem;
+ 
 }
-
-
   .product-list {
-    display: grid;
     grid-template-columns: repeat(1, 1fr);
     margin-top: 5em;
     height: 100%;
@@ -905,7 +915,7 @@ h5 span {
   }
 
   .product-detail h2 {
-    font-size: 30px;
+    font-size: 25px;
     margin-bottom: 10px;
     font-family: "Dancing Script", system-ui;
     font-weight: lighter;
@@ -925,7 +935,7 @@ h5 span {
     position: absolute;
     top: 65%;
     bottom: 0;
-    left: 25%;
+    left: 20%;
     outline: 3px solid red;
 
   }
@@ -990,14 +1000,21 @@ h5 span {
 
   
   .hero-section h1 {
-  font-size: 40px;
-  margin: auto 10px;
+  font-size: 50px;
+  margin: auto 15px;
 
 }
+.hero-section h3 {
+  margin-bottom: 8em;
+ 
+}
+
 
   .shop-now-btn {
-    left: 25%;
-    top: 52%;
+      padding: 12px 25px;
+    left: 35%;
+    top: 54%;
+      font-size: var(15px);
   }
 
   .plant-items {
@@ -1257,13 +1274,13 @@ h5 span {
 }
 
 /* Large devices ( Desktop, 1160px to 1500px) */
-@media (min-width: 1159px) and (max-width: 1500px) {
+@media (min-width: 1160px) and (max-width: 1500px) {
   .display-header {
     gap: 20rem;
   }
 
   .nav {
-    top: -0%;
+    top: 10%;
     left: 2%;
     width: 89%;
     outline: 2px solid red;
